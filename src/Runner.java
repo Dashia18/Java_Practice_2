@@ -14,6 +14,13 @@ public class Runner {
         MyPolynomial polynomialValue2 = new MyPolynomial(1, 2);
         System.out.println(polynomialValue.multiple(polynomialValue2));
 
+        //Ball
+        Ball ballObject = new Ball(2, 2, 1, 5, 30 );
+        System.out.println(ballObject.toString());
+        ballObject.reflectHorizontal();
+        System.out.println();
+        System.out.println(ballObject.toString());
+
 
 
 

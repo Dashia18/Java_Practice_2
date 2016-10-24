@@ -10,7 +10,7 @@ public class Ball {
         this.y = y;
         this.radius = radius;
         this.xDelta = (float) (Math.cos(direction) * speed);
-        this.yDelta = (float) (Math.cos(direction) * (-speed));
+        this.yDelta = (float) (Math.sin(direction) * (-speed));
     }
 
     public float getX() {
@@ -53,7 +53,26 @@ public class Ball {
         this.yDelta = yDelta;
     }
 
+    public void  move(){
+        x += xDelta;
+        y += yDelta;
+    }
+    public void reflectHorizontal(){
+        xDelta = -xDelta;
+    }
+    public void reflectVertical(){
+        yDelta = -yDelta;
+    }
 
+    @Override
+    public String toString() {
+        return "Ball{" +
+                "(" + x +
+                ", " + y +
+                "), speed = (" + xDelta +
+                ", " + yDelta +
+                ")}";
+    }
 
     //Data
     private float x; //coordinate of centre
