@@ -21,6 +21,11 @@ public class Runner {
         System.out.println();
         System.out.println(ballObject.toString());
 
+        //Container
+        Container containerObject = new Container(0,0, 2,3);
+        System.out.println(containerObject.toString());
+        System.out.println(containerObject.getHeight());
+        System.out.println(containerObject.getWidth());
 
 
 
