@@ -8,8 +8,8 @@ public class Container {
     public Container(int x, int y, int width, int height) {
         this.x1 = x;
         this.y1 = y;
-        this.x2 = -(x + width);
-        this.y2 = -(y + height);
+        this.x2 = (x + width);
+        this.y2 = (y + height);
     }
 
     public int getX() {
@@ -27,6 +27,22 @@ public class Container {
         return Math.abs(y2-y1);
     }
 
+    public boolean collides(Ball ball){
+        boolean ballIsInside = false;
+
+        int diameter = ball.getRadius()*2;
+        int radius = ball.getRadius();
+        double x0 = ball.getX();
+        double y0 = ball.getY();
+
+        if (   (diameter <= getHeight() && diameter <= getWidth())
+                && (x0 >= x1 + radius &&  x0 <= x2 - radius )
+                && (y0 >= y1 + radius  &&  y0 <= y2 - radius )   ){
+            ballIsInside = true;
+        }
+
+        return  ballIsInside;
+    }
     @Override
     public String toString() {
         return "Container{" +
